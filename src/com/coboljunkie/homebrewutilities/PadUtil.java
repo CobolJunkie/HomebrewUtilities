@@ -1,3 +1,5 @@
+package com.coboljunkie.homebrewutilities;
+
 /** This class contains various utilities to extend the length of a given String by padding it with specified Characters
  *
  * @author Coboljunkie
@@ -52,12 +54,10 @@ public class PadUtil {
      * @since 0.1
      **/
     public static String padRight(String inputString,int length)throws IllegalArgumentException{
-        StringBuilder sb = new StringBuilder(inputString);
         if (length <= 0){
             throw new IllegalArgumentException("Negative values are not permitted for parameter length");
         }
-        sb.append("0".repeat(length));
-        return sb.toString();
+        return inputString + "0".repeat(length);
     }
     /** This method pads a string up to the length specified with a specified character added on the right.
      *
@@ -69,12 +69,10 @@ public class PadUtil {
      * @since 0.1
      **/
     public static String padRight(String inputString,int length,char padChar)throws IllegalArgumentException{
-        StringBuilder sb = new StringBuilder(inputString);
         if (length <= 0){
             throw new IllegalArgumentException("Negative values are not permitted for parameter length");
         }
-        sb.append(String.valueOf(padChar).repeat(length));
-        return  sb.toString();
+        return inputString + String.valueOf(padChar).repeat(length);
     }
     /** This method pads a string up to the length specified with a specified character added at the specified index.
      *
